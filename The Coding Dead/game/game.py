@@ -12,12 +12,21 @@ class Game(object):
         map_y - amount of columns in the map
         """
         self.map = Map(map_x, map_y)
+        self.map_x = map_x
+        self.map_y = map_y
         self.x = x
         self.y = y
         self.z = z
+        self.total_entities = x+y+z
         self.t = t
 
     def populate(entity, amount):
+        i = 0
+        while i < (self.total):
+            #generate random tile location
+            #if not empty
+                #add entity
+                #increment i
         # fill amount of tiles with entity
         # use random numbers to place,
         # try again if space occupied
