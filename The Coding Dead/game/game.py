@@ -20,17 +20,30 @@ class Game(object):
         self.total_entities = x+y+z
         self.t = t
 
-    def populate(entity, amount):
-        i = 0
-        while i < (self.total):
-            #generate random tile location
-            #if not empty
-                #add entity
+    def populate(self):
+        i,j,k,l = 0,0,0,0
+        while i < (self.total_entities):
+            # generate random tile location
+            x = random.randint(0,self.map_y-1)
+            y = random.randint(0,self.map_x-1)
+            #print "%d,%d" %(x,y)
+            # check for occupation
+            if (self.map.get_tile(x,y).is_occupied()):
+                # is already occupied
+                pass
+            else: # not occupid
+                # add entity
+                if j < self.x: # add zombie
+                    self.map.get_tile(x,y).occupy("Zombie")                    
+                    j+=1
+                elif k < self.y: # add victim
+                    self.map.get_tile(x,y).occupy("Victim") 
+                    k+=1
+                elif l < self.z: # add hunter
+                    self.map.get_tile(x,y).occupy("Hunter")
+                    l+=1       
                 #increment i
-        # fill amount of tiles with entity
-        # use random numbers to place,
-        # try again if space occupied
-        pass
+                i+=1
 
     def update(self):
         self.map.update()
@@ -39,9 +52,14 @@ class Game(object):
         for i in xrange(self.t):
             self.update()
 
+    def get_map(self):
+        return self.map
+
 if __name__ == "__main__":
     print "Creating game."
-    myGame = Game(30,50,33,5,12,24)
+    myGame = Game(3,3,3,1,10,1)
+    print "Populating map."
+    myGame.populate()
     print "Running simulation."
     myGame.simulate()
         

@@ -11,10 +11,16 @@ class Map(object):
     def update(self):
         for x in xrange(len(self.tile_list)):
             for y in xrange(len(self.tile_list[0])):
-                print self.tile_list[x][y].printPos()
+                print self.tile_list[x][y].update()
+
+    def get_tile(self, x, y):
+        return self.tile_list[x][y]
 
     def get_size_x(self):
         return self.tile_size_x
 
     def get_size_y(self):
         return self.tile_size_y
+
+    def get_list(self):
+        return self.tile_list

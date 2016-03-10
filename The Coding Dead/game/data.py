@@ -12,7 +12,7 @@ class Data(object):
         self.hunters_bitten = 0
         #self.total_bitten = 0
 
-    def PrintAll(self):
+    def print_all(self):
 
         zombies_killed = self.single_kills + (self.double_kills*2)
         print "Zombies have stumbled %d units." % self.zombie_stumble_units
