@@ -24,8 +24,8 @@ class Game(object):
         i,j,k,l = 0,0,0,0
         while i < (self.total_entities):
             # generate random tile location
-            x = random.randint(0,self.map_y-1)
-            y = random.randint(0,self.map_x-1)
+            x = random.randint(0,self.map_x-1)
+            y = random.randint(0,self.map_y-1)
             #print "%d,%d" %(x,y)
             # check for occupation
             if (self.map.get_tile(x,y).is_occupied()):
@@ -57,7 +57,7 @@ class Game(object):
 
 if __name__ == "__main__":
     print "Creating game."
-    myGame = Game(3,3,3,1,10,1)
+    myGame = Game(1,0,0,1,2,2)
     print "Populating map."
     myGame.populate()
     print "Running simulation."
