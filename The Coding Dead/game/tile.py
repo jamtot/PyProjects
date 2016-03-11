@@ -8,9 +8,10 @@ class Tile(object):
         self.entity = None
 
     def update(self):
-        print "X:%r, Y:%r: " % self.position,
-        if self.occupied: print "%s on Tile." % self.occupier
-        else: print "Tile empty."
+        #print "X:%r, Y:%r: " % self.position,
+        #if self.occupied: print "%s on Tile." % self.occupier
+        #else: print "Tile empty."
+        pass
 
     def is_occupied(self):
         return self.occupied
@@ -31,7 +32,11 @@ class Tile(object):
             self.entity = Victim(self.position)
         elif self.occupier == "Hunter":
             self.entity = Hunter(self.position)
-
+        
+    def vacated(self):
+        self.occupied = False
+        self.occupier = ''
+        self.entity = None
 
     def print_pos(self):
         print self.position

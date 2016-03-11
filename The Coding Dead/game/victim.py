@@ -11,6 +11,9 @@ class Victim(Entity):
         # will move 1 square
         pass
 
+    def move(self, potential_moves):
+        x_moves, y_moves = super(Victim,self).move(potential_moves)
+
     def update(self):
         # stay still if no zombie beside
         # flee if zombie beside

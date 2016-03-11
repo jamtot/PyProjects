@@ -51,15 +51,20 @@ class Game(object):
     def simulate(self):
         for i in xrange(self.t):
             self.update()
+            self.draw()
 
     def get_map(self):
         return self.map
 
+    def draw(self):
+        self.map.draw()
+
 if __name__ == "__main__":
     print "Creating game."
-    myGame = Game(1,0,0,1,2,2)
+    myGame = Game(40,40,40,1,20,20)
     print "Populating map."
     myGame.populate()
     print "Running simulation."
     myGame.simulate()
+    
         

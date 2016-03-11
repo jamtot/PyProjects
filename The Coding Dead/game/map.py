@@ -11,7 +11,8 @@ class Map(object):
     def update(self):
         for x in xrange(len(self.tile_list)):
             for y in xrange(len(self.tile_list[0])):
-                print self.tile_list[x][y].update()
+                #print self.tile_list[x][y].update()
+                pass
 
     def get_tile(self, x, y):
         return self.tile_list[x][y]
@@ -27,18 +28,27 @@ class Map(object):
 
     def get_moves(self):
         occupied_tiles = []
+        potential_moves = []
         for x in xrange(len(self.tile_list)):
             for y in xrange(len(self.tile_list[0])):
-                if self.tile_list[x][y].occupied():
+                if self.tile_list[x][y].is_occupied():
                     occupied_tiles.append(self.tile_list[x][y])
 
         for tile in occupied_tiles:
             position = tile.position
             if position[0]-1 > 0:# can move back one (x)
-                pass
+                potential_moves.append("x -1")
             if position[0]+1<self.tile_size_x:# can move forward one (x)
-                pass
+                potential_moves.append("x 1")
             if position[1]-1 > 0:# can move back one (y)
-                pass
+                potential_moves.append("y -1")
             if position[1]+1<self.tile_size_x:# can move forward one (y)
-                pass
+                potential_moves.append("y 1")
+
+    def draw(self):
+        for x in xrange(len(self.tile_list)):
+            for y in xrange(len(self.tile_list[0])):
+                if self.tile_list[x][y].is_occupied():
+                    print self.tile_list[x][y].occupier[0],
+                else: print '_',
+            print
