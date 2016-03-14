@@ -28,8 +28,6 @@ class Data(object):
         print "Zombies have bitten %d hunters." % self.hunters_bitten
         print "Zombies have bitten %d total." % total_bitten
 
-
-
     def add_zom_move(self):
         self.zombie_stumble_unit+=1
 

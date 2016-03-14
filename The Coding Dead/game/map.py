@@ -45,6 +45,13 @@ class Map(object):
             if position[1]+1<self.tile_size_x:# can move forward one (y)
                 potential_moves.append("y 1")
 
+        return occupied_tiles, potential_moves
+
+    def make_moves(self):
+        occupied_tiles, potential_moves = self.get_moves()
+        for tile in occupied_tiles:
+            tile.get_entity().move(potential_moves)
+
     def draw(self):
         for x in xrange(len(self.tile_list)):
             for y in xrange(len(self.tile_list[0])):

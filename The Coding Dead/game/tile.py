@@ -19,6 +19,9 @@ class Tile(object):
     def get_occupier(self):
         return self.occupier
 
+    def get_entity(self):
+        return self.entity
+
     def occupy(self, entity_type):
         from hunter import Hunter
         from zombie import Zombie
