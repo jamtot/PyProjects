@@ -67,25 +67,26 @@ def run_till_win(quick_pick = True):
         nums = sorted(nums)
 
     draws_entered = 0
-    
+    spinny = ["/","-","|","\\","|"]
+    dealy = 0
     while sorted(draw) != sorted(nums): 
         draws_entered+=1
         draw, bonus = num_generator(draw_balls, draw_min, draw_max)
-        elapsed = time.time() - start_time
-        mins = 0
-        if elapsed % 60 == 0:
-            mins+=1
-            print "%d mins elapsed." % mins
+        print "%s\r" % spinny[dealy%len(spinny)],
+        dealy+=1
         #if quick_pick:
         #    nums = num_generator(draw_balls, draw_min, draw_max, False)
-    time = ''
-    if draws_entered < (52*2): time = "%d weeks" % draws_entered/2
-    elif draws_entered >= (52*2) and draws_entered < (52*2)*100: time = "%.2f years" % float(draws_entered/(52.*2.))
-    elif draws_entered >= (52*2)*100: time = "%.2f centuries" % float(draws_entered/(52.*2.*100.))
+    times = ''
+    if draws_entered < (52*2): times = "%d weeks" % draws_entered/2
+    elif draws_entered >= (52*2) and draws_entered < (52*2)*100: times = "%.2f years" % float(draws_entered/(52.*2.))
+    elif draws_entered >= (52*2)*100: times = "%.2f centuries" % float(draws_entered/(52.*2.*100.))
 
     print """You finally won the jackpot after %d games played. 
 If you played twice a week, at 2 euro a pop, you spent %s playing, and %d euros.""" % (
-        draws_entered, time, draws_entered*2)
+        draws_entered, times, draws_entered*2)
+
+    elapsed = int(time.time() - start_time)
+    print "Time elapsed: %r seconds" % elapsed
 
 def do_lotto(draw_min = 1, draw_max = 47, draw_balls = 6):
     draw, bonus = num_generator(draw_balls, draw_min, draw_max)
