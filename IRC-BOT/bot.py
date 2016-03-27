@@ -3,7 +3,7 @@ knook
 knook
 knook
 #rdpPONG,#gg
-Hello, world!"""
+Hi, I'm a bot."""
 
 #,#reddit-dailyprogrammer,#rdp,#botters-test
 
@@ -174,10 +174,18 @@ class Bot(object):
                 self.current_channel = t_input[1]
             else:
                 print "Not in %s, joining." % t_input[1]
-                self.current_channel=t_input[1]
-                joinmsg="JOIN %s"%self.current_channel
-                self.channels.append(t_input[1])
-                self.send(joinmsg)
+                if t_input[1].startswith("#"):
+                    self.current_channel=t_input[1]
+                    joinmsg="JOIN %s"%self.current_channel
+                    self.channels.append(t_input[1])
+                    self.send(joinmsg)
+                else:
+                    print "You forgot the #"
+
+        elif t_input.startswith("/cur"):
+            for chan in self.channels:
+                interrupt_text(chan),
+            
 
         elif "/join " in t_input:
             t_input = t_input.split("/join ")
@@ -206,6 +214,18 @@ class Bot(object):
                 for chan in self.channels:
                     self.sndmsg(chan, t_input[1])
 
+        elif t_input.startswith("/part "):
+            t_input = t_input.split("/part ")
+            line_overwrite()
+            self.send("PART %s"%(t_input[1]))
+            if t_input[1] in self.channels:
+                self.channels.remove(t_input[1])
+                if t_input[1] == self.current_channel:
+                    if len(self.channels)>0:
+                        self.current_channel = self.channels[0]
+                    else:
+                        self.current_channel=''
+
         # write to all channels you are in
         elif t_input.startswith("/me "):
             t_input = t_input.split("/me ")
@@ -214,7 +234,16 @@ class Bot(object):
                 self.current_channel,t_input[1]))
         
         elif t_input.startswith("/msg "):
-            pass
+            try:
+                t_input = t_input.split("/msg ")[1]
+                print t_input
+                t_input = t_input.split()
+                if len(t_input)>1:
+                    self.sndmsg(t_input[0], " ".join(t_input[1:]))
+            except AttributeError:
+                print "%s<- , %s<- " % (t_input[0], " ".join(t_input[1:]))
+                print "whaddaya a meatball?"
+                
 
         # no commands, just output the input as a message in chat
         else:
@@ -247,7 +276,7 @@ class Bot(object):
         print "~~"+" ".join(line)+"~~"
 
     # 
-    def word_scan(self, room, text):
+    def word_scan(self, room, text):     
         if chef_scan(text):
             self.sndmsg(room,chef_scan(text),True)
         elif lol_scan(text):
