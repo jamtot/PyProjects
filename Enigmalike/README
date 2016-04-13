@@ -1,0 +1,6 @@
+A semi-enigma-machine-like cypher that uses 'rotors' to cypher and decypher messages.
+It is more unlike the enigma machine than it is alike, the wheels spin one way to
+encode, the other to decode, whereas the enigma machine always went forward, and
+paired keys. This doesn't pair keys, nor does the cypher travel throught the
+rotors and back after hitting a reflector. The wheel positions are setteable, 
+and as many wheels as you want can be added for extra 'cypherage'.
