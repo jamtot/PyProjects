@@ -3,4 +3,26 @@ It is more unlike the enigma machine than it is alike, the wheels spin one way t
 encode, the other to decode, whereas the enigma machine always went forward, and
 paired keys. This doesn't pair keys, nor does the cypher travel throught the
 rotors and back after hitting a reflector. The wheel positions are setteable, 
-and as many wheels as you want can be added for extra 'cypherage'.
+and as many wheels as you want can be added for extra 'cypherage'. This also
+lacks the letter pairings, instead using a seed for random numbers used to 
+shift the charactersets passed through.
+
+The above text encoded using this project with the following attributes
+random seed  - 534
+rotors - 10
+teeth per rotor - 5
+starting positions - [3, 1, 3, 4, 1, 0, 2, 3, 4, 2]
+
+results in 
+
+}B^v'-Pnf D6B(w2l>;pyTQy}H^M`Y,wA6 X?n]b/~x>;1Z,jtMyuJqs#/=I"f
+[u;q\,XfvdjoIP%+n}AnF|U@>UW5naYV<T3?C qk-l7H;gisCv_f<ItMN0H!$+.<
+U_g#[*jd H~5`D9n"}jy{QI5SbXSX<w8D./*ng.!7hbn@fHojyYTJjH<F[PM1_j`E]B
+<~knj7,s>Z9>ywvw<NP<O[F6XI#%`|rfy5c6dW;hjBSjatzxrSI*S,S?<(B<v=[Q
+#9 P;EjokwB`1J]NH*N7)@dTFxy#T18k.:1j>m8!Z9tj{WqxH,F[I/c9n?U*_#{5ntq(U=
+Si0jkns:C!+(]P?RM \]?x.g5765O~eoyN[:*-Mg"M]H[z=`[U_z)<5828B;T9Dln-*nyS
+FD\s3#SV%FH62X]8d9L`x>I~&HrcH{uscQPR(qX1^l;q^@-.ktyoTspUtcBnEq,RpBDwF6#
+E][}WC]iq8]jK~1goPC}HUXrNW{Q<#x#-Z^KY%\8m9F7H`k]B;-fj|TH*U3X'X;hwB^R]lk
+b/~i>D~A+ckz{uJjHPS+B/~]A<S5,/95lfp,H$Ho4LxHw-j
+
+and the position of the wheels end at [2, 1, 4, 4, 1, 0, 2, 3, 4, 2]
