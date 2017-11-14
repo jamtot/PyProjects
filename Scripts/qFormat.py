@@ -70,66 +70,47 @@ questions2=[
 Picador (C)
 Picaroon
 Picotee
-Piculet"""
- , 
-"""2. What is the title of the TV arts programme presented by Melvyn Bragg since 1970?
+Piculet""","""2. What is the title of the TV arts programme presented by Melvyn Bragg since 1970?
  
 The East London Show
 The North Country Show
 The South Bank Show (C)
-The West End Show
-
-In May 2009 ITV announced that the show is to be axed when Bragg retires in 2010"""
-,
-"""3. In which country is the Harz mountain range?
+The West End Show""","""3. In which country is the Harz mountain range?
  
 Austria
 Belgium
 Germany (C)
-Spain""",
-"""4. What type of creature is a gecko?
+Spain""","""4. What type of creature is a gecko?
  
 Bird
 Fish
 Lizard (C)
-Monkey""",
-"""5. During a 1987 court case, who was famously described by the judge as 'fragrant'?
+Monkey""","""5. During a 1987 court case, who was famously described by the judge as 'fragrant'?
  
 Mary Archer (C)
 Mary Parkinson
 Mary Poppins
-Mary Quant
-
-Her husband Jeffrey had brought a libel action against the Daily Star""",
-"""6. Which US president once claimed to have been 'misunderestimated'?
+Mary Quant""","""6. Which US president once claimed to have been 'misunderestimated'?
  
 George W Bush (C)
 Jimmy Carter
 Gerald Ford
-Ronald Reagan
-
-It is one of his famous 'Bushisms'""",
-"""7. Which Shropshire town is named after a famous civil engineer?
+Ronald Reagan""","""7. Which Shropshire town is named after a famous civil engineer?
  
 Bridgnorth
 Ludlow
 Telford (C)
-Whitchurch""",
-"""8. Which of these is a type of persimmon?
+Whitchurch""","""8. Which of these is a type of persimmon?
  
 Chantelle Fruit
 Brandine fruit
 Sharon fruit (C)
-Tracy Fruit
-
-It is named after Israel's Sharon Valley, where it is grown""",
-"""9. What colour is the pigment chlorophyll?
+Tracy Fruit""","""9. What colour is the pigment chlorophyll?
  
 Blue
 Green (C)
 Red
-Yellow""",
-"""10. Which pre-decimal coin was nicknamed a 'tosheroon'?
+Yellow""","""10. Which pre-decimal coin was nicknamed a 'tosheroon'?
  
 Penny
 Threepenny bit
